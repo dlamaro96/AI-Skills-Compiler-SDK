@@ -50,6 +50,24 @@ Use semantic versioning:
 - minor: new backward-compatible integrations or capabilities
 - major: breaking API changes
 
+## Releases And PyPI Publishing
+
+PyPI publishing is handled through GitHub Actions trusted publishing.
+
+Workflow files:
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/release.yml`
+
+Release flow:
+
+1. Merge changes to `main`.
+2. Update the package version in `pyproject.toml`.
+3. Create a GitHub release.
+4. Let `release.yml` build and publish the package.
+
+One-time repository setup on PyPI is required so PyPI trusts this GitHub repository as a publisher.
+
 ## Security
 
 - Never commit real ASC keys or secrets.

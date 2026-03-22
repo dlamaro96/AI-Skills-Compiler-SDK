@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest an improvement or a new integration
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What developer pain or gap are you trying to address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What should the SDK do?
+    validations:
+      required: true
+
+  - type: input
+    id: framework
+    attributes:
+      label: Related framework
+      placeholder: openai-agents / agno / langgraph / custom
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, examples, docs, or references

@@ -6,6 +6,15 @@ It helps backend developers send agent runs, tool calls, outputs, routing decisi
 
 This package is for `pip install` only. It does not run the ASC backend, database, or frontend.
 
+## Project Status
+
+- Status: beta
+- Stability promise: public APIs documented in this README are intended to stay backward-compatible across minor releases whenever possible
+- Local test command: `PYTHONPATH=src python -m unittest discover -s tests`
+- Changelog: [`CHANGELOG.md`](./CHANGELOG.md)
+- Security policy: [`SECURITY.md`](./SECURITY.md)
+- Roadmap: [`ROADMAP.md`](./ROADMAP.md)
+
 ## Repository Layout
 
 - SDK repository: [AI-Skills-Compiler-SDK](https://github.com/dlamaro96/AI-Skills-Compiler-SDK)
@@ -115,6 +124,33 @@ Not included:
 - frontend and backend application code from the main platform repo
 
 This means `.data/agent_skill_compiler.db` is not required for the open-source SDK and should not be part of the published package.
+
+## GitHub To PyPI Publishing
+
+This repository is configured for GitHub-based publishing to PyPI using trusted publishing.
+
+Included workflows:
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/release.yml`
+
+How publishing works:
+
+1. Push changes to `main`.
+2. Create a GitHub release.
+3. The `release.yml` workflow builds the package and publishes it to PyPI.
+
+One-time PyPI setup is still required:
+
+1. Go to the PyPI project settings for `agent-skill-compiler`.
+2. Open the trusted publishing section.
+3. Add this GitHub repository as a trusted publisher:
+   - Owner: `dlamaro96`
+   - Repository: `AI-Skills-Compiler-SDK`
+   - Workflow: `release.yml`
+   - Environment: `pypi`
+
+If the trusted publisher is not configured on PyPI, the GitHub workflow will build successfully but publishing will fail.
 
 ## Quick Start By Framework
 
@@ -470,6 +506,12 @@ Please read `CONTRIBUTING.md` before opening a pull request. In general:
 - document framework support changes clearly
 - add tests for public behavior changes
 - avoid committing secrets, keys, or local-only artifacts
+
+Community and collaboration files:
+
+- [`CONTRIBUTING.md`](./CONTRIBUTING.md)
+- [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md)
+- [`SECURITY.md`](./SECURITY.md)
 
 ## License
 

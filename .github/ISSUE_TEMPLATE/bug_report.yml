@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a bug in the SDK
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is broken?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Share the smallest reproduction you can.
+      placeholder: |
+        1. Install ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: SDK version
+      placeholder: 0.5.0
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.12"
+
+  - type: input
+    id: framework
+    attributes:
+      label: Framework
+      placeholder: openai-agents / agno / langchain / custom
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or traceback
+      render: text

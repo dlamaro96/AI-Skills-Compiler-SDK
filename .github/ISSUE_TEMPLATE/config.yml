@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/dlamaro96/AI-Skills-Compiler-SDK/security/policy
+    about: Please report suspected vulnerabilities privately using the security policy.
+  - name: Platform repository
+    url: https://github.com/dlamaro96/AI-Skills-Compiler
+    about: Use the main platform repository for backend/frontend product discussions.
