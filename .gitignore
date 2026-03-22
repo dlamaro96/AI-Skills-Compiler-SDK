@@ -1,0 +1,14 @@
+.data/
+__pycache__/
+*.pyc
+reports/
+.venv/
+.pypi-install/
+.install-check/
+.env
+.env.*
+!.env.example
+.artifacts/
+dist/
+build/
+*.egg-info/

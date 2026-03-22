@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-skill-compiler"
+version = "0.5.0"
+description = "Python SDK for sending agent traces to a remote Agent Skill Compiler backend."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+license-files = ["LICENSE"]
+authors = [
+  { name = "Daniel Lamchahhem Amaro" }
+]
+keywords = ["agents", "ai", "skills", "tracing", "analysis", "tooling"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx>=0.28.1",
+  "pydantic>=2.11.0",
+]
+
+[project.optional-dependencies]
+agno = [
+  "agno",
+]
+openai-agents = [
+  "openai-agents",
+]
+microsoft = [
+  "agent-framework",
+]
+google-adk = [
+  "google-adk",
+]
+crewai = [
+  "crewai",
+]
+langchain = [
+  "langchain",
+]
+llamaindex = [
+  "llama-index",
+]
+pydantic-ai = [
+  "pydantic-ai",
+]
+
+[project.urls]
+Homepage = "https://github.com/dlamaro96/AI-Skills-Compiler-SDK"
+Repository = "https://github.com/dlamaro96/AI-Skills-Compiler-SDK"
+Issues = "https://github.com/dlamaro96/AI-Skills-Compiler-SDK/issues"
+Platform = "https://github.com/dlamaro96/AI-Skills-Compiler"
+Backend = "https://github.com/dlamaro96/AI-Skills-Compiler"
+Frontend = "https://github.com/dlamaro96/AI-Skills-Compiler"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_skill_compiler"]
+
+[tool.hatch.build]
+ignore-vcs = true
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/CONTRIBUTING.md",
+  "/LICENSE",
+  "/README.md",
+  "/pyproject.toml",
+  "/src",
+  "/tests",
+]
+exclude = [
+  "/.gitignore",
+]
